@@ -1,0 +1,10 @@
+.w3-sidebar{
+    background-color:  rgb(194, 194, 194);       
+}
+
+.side-content{
+    background-color: white;
+    margin: 5px 5px 5px 10px;
+    height: 95%;
+    border-radius: 10px;       
+}
