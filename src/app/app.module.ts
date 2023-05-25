@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { provideFirebaseApp, getApp, initializeApp} from '@angular/fire/app'
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DesignComponent } from './design/design.component';
+import { environment } from './../enviroments/enviroment';
 
 
 @NgModule({
   declarations: [
-    AppComponent,   
+    AppComponent,       
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,   
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     AppRoutingModule
   ],
   providers: [],
