@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CSVRecord } from './CSVRECORD'
+import { SettingService } from './../services/setting.service'
 
 @Component({
   selector: 'app-setting',
@@ -8,7 +9,7 @@ import { CSVRecord } from './CSVRECORD'
 })
 export class SettingComponent {
  CSV : any = File
-  constructor(){}
+  constructor(private setting : SettingService){}
 
   
   ChangeCSV(event : any){
@@ -27,8 +28,17 @@ export class SettingComponent {
     }
   }
 
-  GetDataCSV(){
-    let CSVArray = []     
+  importCSV(){
+    this.CSV.forEach((element :  any) => {
+      let item = JSON.parse(JSON.stringify(element))
+     this.setting.ImportBD(item).then((el)=> {
+      console.log('success')
+     }).catch((err)=> {
+       console.log('error : ' + err)
+     })
+     console.log(item)
+    });
+    
   }
 
   getDataRecordsArrayFromCSVFile(csvRecordsArray: any, headerLength: any) {  
