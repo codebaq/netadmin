@@ -12,8 +12,7 @@ export class SettingService {
     const BDUserRef = collection(this.firestore, 'users')
     const {id} = doc(BDUserRef)
     users.REFID = id 
-    let Referenciaid = id
-    console.log(users)
+    let Referenciaid = id    
    // return addDoc(BDUserRef, users )
     return setDoc(doc(BDUserRef, Referenciaid), users)
   }

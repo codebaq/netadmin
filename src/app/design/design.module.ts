@@ -8,7 +8,7 @@ import { DesignComponent } from './design.component';
 
 @NgModule({
   declarations: [
-   DesignComponent
+   DesignComponent,   
   ],
   imports: [
     CommonModule,

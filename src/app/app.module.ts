@@ -9,7 +9,7 @@ import { environment } from './../enviroments/enviroment';
 
 @NgModule({
   declarations: [
-    AppComponent,       
+    AppComponent,         
   ],
   imports: [
     BrowserModule,   
